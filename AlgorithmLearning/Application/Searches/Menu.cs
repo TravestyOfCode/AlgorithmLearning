@@ -11,7 +11,7 @@ namespace AlgorithmLearning.Application.Searches
         private readonly static string[] menu =
         {
             "Search Algorithms",
-            "These algorithms are used to search collections for criteria. Select an     algorithm below to learn more.",
+            "These algorithms are used to search collections for criteria. Select an algorithm below to learn more.",
             "1) Binary Search",
             "2) Breadth First Search",
             "3) Depth First Search",

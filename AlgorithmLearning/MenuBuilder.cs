@@ -86,10 +86,19 @@ namespace AlgorithmLearning
                 while (message.Length > AvailableSpace)
                 {
                     // Split the string based on space remaining between BorderChar + Padding on each side
-                    // TODO: Split along nearest breaking space to available space without going over
-                    // For now, just split
+                    // Checking for whitespace for break.
                     string split = message.Substring(0, AvailableSpace);
-                    message = message.Substring(AvailableSpace, message.Length - split.Length);
+
+                    if(!char.IsWhiteSpace(split.Last()))
+                    {
+                        int lastSpace = split.LastIndexOf(' ');
+                        if(lastSpace > 0)
+                        {
+                            split = message.Substring(0, lastSpace);
+                        }
+                    }
+
+                    message = message.Substring(split.Length, message.Length - split.Length).Trim();
 
                     // Display our split
                     builder.AppendLine($"{BorderChar}{PaddingSpace}{split}{new string(' ', AvailableSpace - split.Length)}{PaddingSpace}{BorderChar}");
