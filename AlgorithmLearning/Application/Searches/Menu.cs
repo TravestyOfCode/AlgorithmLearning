@@ -31,6 +31,10 @@ namespace AlgorithmLearning.Application.Searches
 
                 switch(key.Key)
                 {
+                    case ConsoleKey.D1:
+                        BinarySearch.Run(menuBuilder);
+                        break;
+
                     case ConsoleKey.R:
                         quit = true;
                         Console.Clear();
